@@ -10,12 +10,13 @@ let randomNumber = '';
 let userInput = '';
 
 p1Btn.addEventListener('click', guessNumber);
+p2Btn.addEventListener('click', guessNumber);
 
 function guessNumber(){
        randomNumber = Math.floor(Math.random() * 6);
        userInput = Number(inputDisplay.value);
 
-       if(userInput = ''){
+       if(userInput == ''){
            alert("Please enter your guess number");
             }
         else{
@@ -23,6 +24,7 @@ function guessNumber(){
             if(userInput === randomNumber){
                 resultText.textContent = "Congratulations you win";
                 inputDisplay.value = '';
+                showRandNumber.textContent= '';
             }
             else{
                 resultText.textContent = "You failed"; 
@@ -35,4 +37,6 @@ clrBtn.addEventListener('click',()=>{
    randomNumber = '';
    userInput = '';
    inputDisplay.value = '';
+   showRandNumber.textContent= '';
+   resultText.textContent = '';
 });
